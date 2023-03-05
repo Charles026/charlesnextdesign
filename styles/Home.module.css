@@ -1,0 +1,45 @@
+
+.container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1366px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 64px;
+}
+
+#left-container {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+  }
+  
+  
+/* #right {
+  margin-top: 2rem;
+  overflow: auto;
+  max-height: calc(100vh - 4rem);
+} */
+
+
+.socialIcon:hover {
+  filter: opacity(70%);
+  cursor: pointer;
+}
+
+
+/* @media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+  #left-container {
+    position: relative;
+    width: 100%;
+  }
+  #right {
+    margin-top: 0;
+    max-height: none;
+  }
+} */
