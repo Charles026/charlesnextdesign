@@ -62,7 +62,7 @@ export default function Home() {
       </Head>
       <ScrollIndicator/>
       <main className='container px-5 flex flex-col  mx-auto pt-16  xl:flex-row'>
-        <div id='left-container' className='mx-auto  w-auto mb-20 xl:w-1/2 xl:mr-8'>
+        <div className='mx-auto  w-auto mb-20 xl:w-1/2 xl:mr-8'>
           <div className='text-center top-16 xl:mr-8 xl:sticky  2xl:ml-20  xl:text-left xl:ml-0'>
             <div className='flex flex-row justify-center xl:justify-start'>
             <Avatar src="/myphoto@2x.png" alt="User Avatar" size={140} />
@@ -80,7 +80,7 @@ export default function Home() {
                 </p>
                 <p>
                   🧑🏻‍💻 I design and code.<br/>
-                  🐱 Living with 4 cats.
+                  🐱 Living with 4 lovely cats.
                 </p>
               </div>
             </div>
