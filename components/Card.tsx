@@ -1,6 +1,7 @@
 import Tag from './Tag';
 import styles from './Card.module.css';
 import React from 'react';
+import Link from 'next/link'
 
 interface CardProps {
   image: string;
@@ -8,9 +9,10 @@ interface CardProps {
   subtitle: string;
   tags: string[];
   key: string;
+  href: string;
 }
 
-const Card = ({ image, title, subtitle, tags }: CardProps) => {
+const Card = ({ image, title, subtitle, tags , href }: CardProps) => {
   const [isHovered, setIsHovered] = React.useState(false);
 
   const handleMouseEnter = () => {
@@ -23,6 +25,7 @@ const Card = ({ image, title, subtitle, tags }: CardProps) => {
 
   return (
     <div className={styles.card} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <Link href={href}>
       <div className={styles.card__image_container}>
         <img src={image} alt={title} className={styles.card__image} />
         {isHovered && (
@@ -40,6 +43,7 @@ const Card = ({ image, title, subtitle, tags }: CardProps) => {
           <Tag key={tag} label={tag} />
         ))}
       </div>
+      </Link>
     </div>
   );
 };

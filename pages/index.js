@@ -18,37 +18,57 @@ const data = [
     image: '/cover@2x.png',
     title: 'Kingsoft Office Design System',
     subtitle: '金山办公设计系统',
-    tags: ['Tag 1', 'Tag 2'],
+    tags: ['Design System', 'Design Engineering'],
+    href: '/projects/kds',
   },
   {
     image: '/cover@2x.png',
-    title: 'Digital Pay',
-    subtitle: '数字支付',
-    tags: ['Tag 3', 'Tag 4'],
+    title: 'Kdocs Air Page',
+    subtitle: '轻文档',
+    tags: ['Web Design', 'Prototype', 'Interaction Design'],
+    href: '/projects/kds',
   },
   {
     image: '/cover@2x.png',
-    title: 'Title 3',
-    subtitle: 'Subtitle 2',
-    tags: ['Tag 3', 'Tag 4'],
+    title: 'Visual Design Collection',
+    subtitle: '视觉合集',
+    tags: ['App Icon Design', 'Visual Design', '3D Design'],
+    href: '/projects/kds',
   },
   {
     image: '/cover@2x.png',
-    title: 'Title 4',
-    subtitle: 'Subtitle 2',
-    tags: ['Tag 3', 'Tag 4'],
+    title: 'Digital Trader',
+    subtitle: '数字贸易平台',
+    tags: ['UI/UX', 'Web Design', 'App Design'],
+    href: '/projects/kds',
   },
   {
     image: '/cover@2x.png',
-    title: 'Title 5',
-    subtitle: 'Subtitle 2',
-    tags: ['Tag 3', 'Tag 4'],
+    title: 'Sponia Sports App',
+    subtitle: '洋葱圈体育社区',
+    tags: ['UI/UX', 'App Design', 'Branding', 'Motion Design'],
+    href: '/projects/kds',
   },
   {
     image: '/cover@2x.png',
-    title: 'Title 6',
-    subtitle: 'Subtitle 2',
-    tags: ['Tag 3', 'Tag 4'],
+    title: 'OpenPlay Football Stats',
+    subtitle: '足球数据统计工具',
+    tags: ['UI/UX', 'App Design', 'Interaction Design'],
+    href: '/projects/kds',
+  },
+  {
+    image: '/cover@2x.png',
+    title: 'The British Museum Audio Guide',
+    subtitle: '音频导览 App',
+    tags: ['UI','Branding','Personal'],
+    href: '/projects/kds',
+  },
+  {
+    image: '/cover@2x.png',
+    title: 'Starbucks App Refine',
+    subtitle: '星巴克 App',
+    tags: ['UI/UX', 'Animation', 'Personal'],
+    href: '/projects/kds',
   },
 ]
 
@@ -63,7 +83,7 @@ export default function Home() {
       <ScrollIndicator/>
       <main className='container px-5 flex flex-col  mx-auto pt-16  xl:flex-row'>
         <div className='mx-auto  w-auto mb-20 xl:w-1/2 xl:mr-8'>
-          <div className='text-center top-16 xl:mr-8 xl:sticky  2xl:ml-20  xl:text-left xl:ml-0'>
+          <div className='text-center top-16 xl:mr-8 xl:sticky xl:text-left xl:ml-0'>
             <div className='flex flex-row justify-center xl:justify-start'>
             <Avatar src="/myphoto@2x.png" alt="User Avatar" size={140} />
             </div>
