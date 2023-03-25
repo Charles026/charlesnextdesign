@@ -12,6 +12,7 @@ body {
   
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  
 }
 
 a {
@@ -22,3 +23,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+/* body {
+  @apply bg-white dark:bg-black;
+} */

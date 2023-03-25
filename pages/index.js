@@ -4,6 +4,10 @@ import Link from 'next/link'
 import Avatar from '../components/Avatar';
 import CardList from '../components/CardList';
 import ScrollIndicator from '../components/ScrollIndicator';
+import { useState,useEffect } from 'react';
+import { useTheme } from 'next-themes';
+import {MoonIcon,SunIcon} from '@chakra-ui/icons';
+
 import {
   Popover,
   PopoverTrigger,
@@ -12,6 +16,7 @@ import {
   HStack,
 } from '@chakra-ui/react';
 import styles from '../styles/Home.module.css'
+
 
 const data = [
   {
@@ -72,7 +77,40 @@ const data = [
   },
 ]
 
+
+
 export default function Home() {
+  const {systemTheme, theme, setTheme} = useTheme();
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+
+  const ColorModeToggle = () => {
+    if (!mounted) return null
+    const currentTheme = theme === 'system' ? systemTheme : theme
+    if (currentTheme === 'dark') {
+      return (
+        <button
+          className="w-7 h-7"
+          onClick={() => setTheme('light')}
+        >
+          <SunIcon className="w-7 h-7" role ="button" onClick={()=>setTheme('light')} />
+        </button>
+      )
+    } else {
+      return (
+        <button
+          className="w-7 h-7"
+          onClick={() => setTheme('dark')}
+        >
+          <MoonIcon className="w-7 h-7" role ="button" onClick={()=>setTheme('dark')} />
+        </button>
+      )
+    }
+  }
+  
+
   return (
     <div >
       <Head>
@@ -81,6 +119,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ScrollIndicator/>
+
+      <div className="fixed top-4 left-4">
+      <ColorModeToggle/>
+      </div>
+      
       <main className='container px-5 flex flex-col  mx-auto pt-16  xl:flex-row'>
         <div className='mx-auto  w-auto mb-20 xl:w-1/2 xl:mr-8'>
           <div className='text-center top-16 xl:mr-8 xl:sticky xl:text-left xl:ml-0'>
@@ -88,10 +131,10 @@ export default function Home() {
             <Avatar src="/myphoto@2x.png" alt="User Avatar" size={140} />
             </div>
             <div className='mt-8 '>
-              <h1 className="text-4xl text-gray-900 font-bold ">
+              <h1 className="text-4xl text-gray-900 font-bold  dark:text-gray-50">
                 Charles
               </h1>
-              <div className='text-lg gap-2 leading-relaxed text-gray-800 flex flex-col mt-4'>
+              <div className='text-lg gap-2 leading-relaxed text-gray-800 flex flex-col mt-4  dark:text-gray-50'>
                 <p>
                   UI/UX Designer
                 </p>
@@ -106,7 +149,7 @@ export default function Home() {
             </div>
           
 
-          <HStack className='justify-center xl:justify-start' spacing='16px' marginTop={5}>
+          <HStack className='justify-center xl:justify-start mt-5' spacing='16px' marginTop={5}>
           <Link href="https://dribbble.com/mumumycat">
           <Image className={styles.socialIcon} src="/icon-dribbble.svg" alt="me" width="24" height="24" />
           </Link>
@@ -132,7 +175,7 @@ export default function Home() {
         </div>
 
         <div className='mx-auto  mb-10'>
-          <h1 className='text-xl mb-6 text-gray-900 font-semibold  text-center xl:text-left'>Projects</h1>
+          <h1 className='text-xl mb-6 text-gray-900 font-semibold  text-center xl:text-left  dark:text-gray-50'>Projects</h1>
           <CardList data={data} />
         </div>
 
