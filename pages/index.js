@@ -7,14 +7,11 @@ import ScrollIndicator from '../components/ScrollIndicator';
 import { useState,useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import {MoonIcon,SunIcon} from '@chakra-ui/icons';
+import  Dribbble from '../src/assets/icon-dribbble.svg';
 
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverBody,
-  HStack,
-} from '@chakra-ui/react';
+
+
+
 import styles from '../styles/Home.module.css'
 
 
@@ -85,7 +82,6 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-
   const ColorModeToggle = () => {
     if (!mounted) return null
     const currentTheme = theme === 'system' ? systemTheme : theme
@@ -95,7 +91,7 @@ export default function Home() {
           className="w-7 h-7"
           onClick={() => setTheme('light')}
         >
-          <SunIcon className="w-7 h-7" role ="button" onClick={()=>setTheme('light')} />
+          <SunIcon className="w-7 h-7" role ="button"  />
         </button>
       )
     } else {
@@ -104,7 +100,7 @@ export default function Home() {
           className="w-7 h-7"
           onClick={() => setTheme('dark')}
         >
-          <MoonIcon className="w-7 h-7" role ="button" onClick={()=>setTheme('dark')} />
+          <MoonIcon className="w-7 h-7" role ="button"  />
         </button>
       )
     }
@@ -123,8 +119,10 @@ export default function Home() {
       <div className="fixed top-4 left-4">
       <ColorModeToggle/>
       </div>
-      
+
+
       <main className='container px-5 flex flex-col  mx-auto pt-16  xl:flex-row'>
+        
         <div className='mx-auto  w-auto mb-20 xl:w-1/2 xl:mr-8'>
           <div className='text-center top-16 xl:mr-8 xl:sticky xl:text-left xl:ml-0'>
             <div className='flex flex-row justify-center xl:justify-start'>
@@ -149,31 +147,22 @@ export default function Home() {
             </div>
           
 
-          <HStack className='justify-center xl:justify-start mt-5' spacing='16px' marginTop={5}>
-          <Link href="https://dribbble.com/mumumycat">
-          <Image className={styles.socialIcon} src="/icon-dribbble.svg" alt="me" width="24" height="24" />
+          <div className='justify-center xl:justify-start mt-5 flex-row flex gap-4'>
+          <Link className='text-gray-500 dark:text-white' href="https://dribbble.com/mumumycat">
+         <MoonIcon />
+          
           </Link>
-          <Link href="https://github.com/Charles026">
+          <Link  href="https://github.com/Charles026">
           <Image className={styles.socialIcon} src="/icon-github.svg" alt="me" width="24" height="24" />
           </Link>
-          <Link href="https://www.instagram.com/bancs_pine/">
+          <Link className='text-gray-500 dark:text-gray-300' href="https://www.instagram.com/bancs_pine/">
           <Image className={styles.socialIcon} src="/icon-instagram.svg" alt="me" width="24" height="24" />
           </Link>
-          <Popover trigger="hover" isLazy >
-          <PopoverTrigger >
-          <Image className={styles.socialIcon} src="/icon-weixin.svg" alt="me" width="24" height="24" />
-          </PopoverTrigger>
-          <PopoverContent width='auto' boxShadow="var(--chakra-shadows-xl)">
-            <PopoverBody>
-            <Image src="/qrcode@2x.png" alt="me" width="200" height="200" />
-            </PopoverBody>
-          </PopoverContent>
-          </Popover>
-          </HStack>
+          </div>
 
           </div>
         </div>
-
+       
         <div className='mx-auto  mb-10'>
           <h1 className='text-xl mb-6 text-gray-900 font-semibold  text-center xl:text-left  dark:text-gray-50'>Projects</h1>
           <CardList data={data} />

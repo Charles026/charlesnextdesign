@@ -24,7 +24,7 @@ const Card = ({ image, title, subtitle, tags , href }: CardProps) => {
   };
 
   return (
-    <div className={styles.card} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div className='bg-white flex flex-col border border-gray-200 rounded-xl p-6 w-fit overflow-hidden shadow-sm transition-shadow dark:bg-zinc-800 dark:border-zinc-800 hover:dark:bg-zinc-700 hover:shadow-lg' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Link href={href}>
       <div className={styles.card__image_container}>
         <img src={image} alt={title} className={styles.card__image} />
@@ -34,9 +34,9 @@ const Card = ({ image, title, subtitle, tags , href }: CardProps) => {
           </div>
         )}
       </div>
-      <div className={styles.card__content}>
-        <h2 className={styles.card__title}>{title}</h2>
-        <p className={styles.card__subtitle}>{subtitle}</p>
+      <div className=' text-gray-900 flex flex-col space-y-0  mt-6 mb-4  dark:text-white'>
+        <h2 className=' text-lg font-bold mb-1'>{title}</h2>
+        <p className='text-lg font-medium'>{subtitle}</p>
       </div>
       <div className={styles.card__tags}>
         {tags.map((tag) => (

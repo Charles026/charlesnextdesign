@@ -14,7 +14,7 @@ const CardList = ({ data }: CardListProps) => {
   return (
     <div className='flex flex-col gap-12'>
       {data.map((cardProps) => (
-        <Card key={cardProps.title} {...cardProps} />
+        <Card href={''} key={cardProps.title} {...cardProps} />
       ))}
     </div>
   );

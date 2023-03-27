@@ -29,7 +29,17 @@ module.exports = {
       xl: "1240px",
       "2xl": "1280px",
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        lg: "0px 2px 8px -2px rgba(0, 0, 0, 0.05), 0px 16px 32px -4px rgba(0, 0, 0, 0.08)" 
+      },
+      colors: {
+        zinc: {
+          700: 'rgba(255, 255, 255, 0.1)',
+          800: 'rgba(255, 255, 255, 0.06)',
+        }
+      }
+    },
   },
   plugins: [],
 }

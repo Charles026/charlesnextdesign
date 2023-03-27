@@ -16,7 +16,11 @@ const Tag = ({ label }: TagProps) => {
       text-sm
       text-gray-600 
       mr-2 
-      mb-2">
+      mb-2
+      
+      dark:bg-zinc-700
+      dark:text-gray-300
+      ">
       {label}
     </span>
   );
